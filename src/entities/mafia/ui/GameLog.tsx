@@ -88,7 +88,10 @@ export function GameLog({ log, players }: GameLogProps) {
                   <LogLine key={id} label={t.saved} player={find(id)} />
                 ))}
                 <LogLine label={t.blocked} player={find(entry.actions.lover)} />
-                <LogLine label={t.checkedByDetective} player={find(entry.actions.detective)} />
+                <LogLine
+                  label={t.checkedByDetective}
+                  player={find(entry.actions.detective)}
+                />
                 <LogLine label={t.checkedByDon} player={find(entry.actions.don)} />
               </>
             ) : entry.eliminatedId ? (

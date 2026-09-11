@@ -27,7 +27,8 @@ export function PlayerRosterEditor({ minPlayers }: PlayerRosterEditorProps) {
   const issues = findNameIssues(players)
   const isFull = players.length >= ROSTER_LIMITS.max
   const freeDefaults = DEFAULT_PLAYER_NAMES.filter(
-    (name) => !names.some((existing) => existing.trim().toLowerCase() === name.toLowerCase()),
+    (name) =>
+      !names.some((existing) => existing.trim().toLowerCase() === name.toLowerCase()),
   )
 
   return (
@@ -54,7 +55,9 @@ export function PlayerRosterEditor({ minPlayers }: PlayerRosterEditorProps) {
           />
         </div>
 
-        {players.length < minPlayers && <Callout tone="warning">{t.minHint(minPlayers)}</Callout>}
+        {players.length < minPlayers && (
+          <Callout tone="warning">{t.minHint(minPlayers)}</Callout>
+        )}
 
         <ol className="flex flex-col gap-2">
           {players.map((player, index) => {
@@ -95,7 +98,9 @@ export function PlayerRosterEditor({ minPlayers }: PlayerRosterEditorProps) {
                   </button>
                 </div>
                 {issue && (
-                  <p className="mt-1 px-3 text-xs font-medium text-rose-500">{t.issues[issue]}</p>
+                  <p className="mt-1 px-3 text-xs font-medium text-rose-500">
+                    {t.issues[issue]}
+                  </p>
                 )}
               </li>
             )

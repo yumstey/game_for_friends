@@ -46,7 +46,9 @@ export function GameCard({
         </span>
       )}
 
-      <h2 className="font-display text-3xl font-bold tracking-tight uppercase">{title}</h2>
+      <h2 className="font-display text-3xl font-bold tracking-tight uppercase">
+        {title}
+      </h2>
       <p className="mt-2 pr-14 text-sm leading-relaxed text-white/85">{description}</p>
 
       <div className="mt-4 flex flex-wrap gap-1.5">

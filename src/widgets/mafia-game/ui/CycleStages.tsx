@@ -54,7 +54,9 @@ export function MorningStage({ session }: { session: MafiaSession }) {
         <span className="relative block animate-float text-6xl" aria-hidden>
           🌅
         </span>
-        <h1 className="relative mt-2 font-display text-2xl font-bold tracking-tight">{t.title}</h1>
+        <h1 className="relative mt-2 font-display text-2xl font-bold tracking-tight">
+          {t.title}
+        </h1>
         <p className="relative text-sm text-white/90">{t.subtitle(session.cycle)}</p>
       </div>
 
@@ -146,9 +148,7 @@ export function DayStage({ session }: { session: MafiaSession }) {
         </div>
       </div>
 
-      {silenced && (
-        <Callout tone="warning">{t.morning.blocked(silenced.name)}</Callout>
-      )}
+      {silenced && <Callout tone="warning">{t.morning.blocked(silenced.name)}</Callout>}
 
       {session.discussionSeconds > 0 && (
         <Card className="py-6">
@@ -189,7 +189,9 @@ export function DayStage({ session }: { session: MafiaSession }) {
 export function VerdictStage({ session }: { session: MafiaSession }) {
   const t = useTranslation(mafiaGameMessages).verdict
   const continueAfterVerdict = useMafiaStore((state) => state.continueAfterVerdict)
-  const eliminated = session.players.find((player) => player.id === session.lastEliminatedId)
+  const eliminated = session.players.find(
+    (player) => player.id === session.lastEliminatedId,
+  )
 
   return (
     <>
@@ -214,7 +216,9 @@ export function VerdictStage({ session }: { session: MafiaSession }) {
             <span className="text-6xl" aria-hidden>
               🤝
             </span>
-            <h1 className="font-display text-2xl font-semibold tracking-tight">{t.nobody}</h1>
+            <h1 className="font-display text-2xl font-semibold tracking-tight">
+              {t.nobody}
+            </h1>
             <p className="text-sm text-muted-foreground">{t.nobodyHint}</p>
           </>
         )}

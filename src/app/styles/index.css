@@ -46,10 +46,11 @@
 }
 
 @theme {
-  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
-    Roboto, sans-serif;
-  --font-display: 'Unbounded Variable', 'Manrope Variable', ui-sans-serif, system-ui,
+  --font-sans:
+    'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
     sans-serif;
+  --font-display:
+    'Unbounded Variable', 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
 
   --animate-pop-in: pop-in 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
   --animate-fade-up: fade-up 0.4s ease-out both;

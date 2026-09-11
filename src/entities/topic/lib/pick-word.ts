@@ -41,7 +41,9 @@ export function pickRandomWord(
     .filter((entry) => entry.words.length > 0)
 
   const historyExhausted = fresh.length === 0
-  const pool = historyExhausted ? topics.map((topic) => ({ topic, words: topic.words })) : fresh
+  const pool = historyExhausted
+    ? topics.map((topic) => ({ topic, words: topic.words }))
+    : fresh
 
   const { topic, words } = pickRandom(pool)
   const word = pickRandom(words)

@@ -24,13 +24,17 @@ interface CardContentProps {
 function CardContent({ label, headline, hint, topicLabel, topic }: CardContentProps) {
   return (
     <>
-      <p className="text-xs font-semibold tracking-[0.2em] text-white/70 uppercase">{label}</p>
+      <p className="text-xs font-semibold tracking-[0.2em] text-white/70 uppercase">
+        {label}
+      </p>
       <p className="font-display text-4xl leading-tight font-bold tracking-tight wrap-break-word">
         {headline}
       </p>
       <p className="max-w-64 text-sm text-white/75">{hint}</p>
       <div className="h-px w-24 bg-white/25" />
-      <p className="text-xs font-semibold tracking-[0.2em] text-white/70 uppercase">{topicLabel}</p>
+      <p className="text-xs font-semibold tracking-[0.2em] text-white/70 uppercase">
+        {topicLabel}
+      </p>
       <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold">
         {topic}
       </span>

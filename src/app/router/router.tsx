@@ -19,7 +19,8 @@ export const router = createBrowserRouter([
       {
         path: ROUTES.imposterSetup,
         lazy: {
-          Component: async () => (await import('@/pages/imposter-setup')).ImposterSetupPage,
+          Component: async () =>
+            (await import('@/pages/imposter-setup')).ImposterSetupPage,
         },
       },
       {
@@ -30,11 +31,15 @@ export const router = createBrowserRouter([
       },
       {
         path: ROUTES.mafiaSetup,
-        lazy: { Component: async () => (await import('@/pages/mafia-setup')).MafiaSetupPage },
+        lazy: {
+          Component: async () => (await import('@/pages/mafia-setup')).MafiaSetupPage,
+        },
       },
       {
         path: ROUTES.mafiaGame,
-        lazy: { Component: async () => (await import('@/pages/mafia-game')).MafiaGamePage },
+        lazy: {
+          Component: async () => (await import('@/pages/mafia-game')).MafiaGamePage,
+        },
       },
       { path: '*', element: <Navigate to={ROUTES.home} replace /> },
     ],

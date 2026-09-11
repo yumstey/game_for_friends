@@ -22,12 +22,20 @@ interface SectionProps {
 }
 
 /** Sarlavhali boʻlim: sozlamalar sahifalaridagi bloklar uchun. */
-export function Section({ title, description, action, children, className }: SectionProps) {
+export function Section({
+  title,
+  description,
+  action,
+  children,
+  className,
+}: SectionProps) {
   return (
     <section className={cn('flex flex-col gap-3', className)}>
       <header className="flex items-end justify-between gap-3 px-1">
         <div className="min-w-0">
-          <h2 className="font-display text-[15px] font-semibold tracking-tight">{title}</h2>
+          <h2 className="font-display text-[15px] font-semibold tracking-tight">
+            {title}
+          </h2>
           {description && (
             <p className="mt-0.5 text-sm text-muted-foreground">{description}</p>
           )}

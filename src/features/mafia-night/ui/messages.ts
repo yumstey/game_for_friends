@@ -56,7 +56,8 @@ export const nightMessages = defineMessages<NightMessages>({
     dead: 'Bu rol oʻyindan chiqqan. Shubha uygʻotmaslik uchun bir necha soniya kutib, davom eting.',
     blocked: (name) => `Maʼshuqa band qildi: ${name}. Bu tun harakat qila olmaydi.`,
     detectiveResult: (isMafia) => (isMafia ? 'Ha, bu MAFIYA!' : 'Yoʻq, mafiya emas'),
-    donResult: (isDetective) => (isDetective ? 'Ha, bu KOMISSAR!' : 'Yoʻq, Komissar emas'),
+    donResult: (isDetective) =>
+      isDetective ? 'Ha, bu KOMISSAR!' : 'Yoʻq, Komissar emas',
     showGesture: 'Natijani imo-ishora bilan koʻrsating: 👍 ha / 👎 yoʻq',
     back: 'Orqaga',
     next: 'Keyingi',
@@ -101,7 +102,8 @@ export const nightMessages = defineMessages<NightMessages>({
     dead: 'This role is out of the game. Wait a few seconds so nobody gets suspicious, then continue.',
     blocked: (name) => `Distracted by the Lover: ${name}. No action tonight.`,
     detectiveResult: (isMafia) => (isMafia ? 'Yes, this is the MAFIA!' : 'No, not mafia'),
-    donResult: (isDetective) => (isDetective ? 'Yes, this is the DETECTIVE!' : 'No, not the Detective'),
+    donResult: (isDetective) =>
+      isDetective ? 'Yes, this is the DETECTIVE!' : 'No, not the Detective',
     showGesture: 'Show the result with a gesture: 👍 yes / 👎 no',
     back: 'Back',
     next: 'Next',

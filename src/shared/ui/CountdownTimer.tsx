@@ -1,6 +1,13 @@
 import { Pause, Play, RotateCcw } from 'lucide-react'
 import { commonMessages, useTranslation } from '@/shared/i18n'
-import { cn, formatDuration, playAlarm, unlockAudio, useCountdown, vibrate } from '@/shared/lib'
+import {
+  cn,
+  formatDuration,
+  playAlarm,
+  unlockAudio,
+  useCountdown,
+  vibrate,
+} from '@/shared/lib'
 import { Button } from './Button'
 import { IconButton } from './IconButton'
 

@@ -14,7 +14,13 @@ export function UndoButton() {
   const undo = useMafiaStore((state) => state.undo)
 
   return (
-    <IconButton label={t.undo} icon={<Undo2 />} variant="outline" disabled={!canUndo} onClick={undo} />
+    <IconButton
+      label={t.undo}
+      icon={<Undo2 />}
+      variant="outline"
+      disabled={!canUndo}
+      onClick={undo}
+    />
   )
 }
 

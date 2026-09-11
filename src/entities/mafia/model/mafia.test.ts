@@ -7,7 +7,12 @@ import {
   recommendRoleCounts,
   validateRoleCounts,
 } from './distribution'
-import { getNightSteps, getStepAvailability, getTargetRestriction, resolveNight } from './night'
+import {
+  getNightSteps,
+  getStepAvailability,
+  getTargetRestriction,
+  resolveNight,
+} from './night'
 import {
   completeNight,
   continueAfterVerdict,
@@ -63,7 +68,9 @@ describe('role distribution', () => {
     expect(validateRoleCounts({ ...base, mafia: 0, don: 0 }, 6)).toContain('no-mafia')
     expect(validateRoleCounts({ ...base, mafia: 3 }, 6)).toContain('mafia-majority')
     expect(validateRoleCounts(base, 3)).toContain('not-enough-players')
-    expect(validateRoleCounts({ ...base, doctor: 2 }, 6)).toContain('unique-role-exceeded')
+    expect(validateRoleCounts({ ...base, doctor: 2 }, 6)).toContain(
+      'unique-role-exceeded',
+    )
   })
 
   it('assigns every role from the deck when creating a session', () => {
@@ -102,10 +109,9 @@ describe('night', () => {
       'doctor',
       'maniac',
     ])
-    expect(getNightSteps(makePlayers(['mafia', 'civilian', 'civilian', 'doctor']))).toEqual([
-      'mafia',
-      'doctor',
-    ])
+    expect(
+      getNightSteps(makePlayers(['mafia', 'civilian', 'civilian', 'doctor'])),
+    ).toEqual(['mafia', 'doctor'])
   })
 
   it('kills the targets of mafia and maniac', () => {
@@ -158,10 +164,18 @@ describe('night', () => {
       ),
     ).toBe('repeat-heal')
     expect(
-      getTargetRestriction({ doctorLastTargetId: null, doctorSelfHealUsed: true }, 'doctor', doctor),
+      getTargetRestriction(
+        { doctorLastTargetId: null, doctorSelfHealUsed: true },
+        'doctor',
+        doctor,
+      ),
     ).toBe('self-heal-used')
     expect(
-      getTargetRestriction({ doctorLastTargetId: null, doctorSelfHealUsed: false }, 'mafia', players[1]!),
+      getTargetRestriction(
+        { doctorLastTargetId: null, doctorSelfHealUsed: false },
+        'mafia',
+        players[1]!,
+      ),
     ).toBe('teammate')
   })
 
@@ -190,7 +204,9 @@ describe('winner', () => {
     expect(getWinner(makePlayers(['maniac', 'mafia', 'don'], []))).toBe('mafia')
     expect(getWinner(makePlayers(['maniac', 'mafia'], []))).toBe('draw')
     expect(getWinner(makePlayers(['mafia', 'civilian'], [0, 1]))).toBe('draw')
-    expect(getWinner(makePlayers(['mafia', 'civilian', 'civilian', 'doctor'], []))).toBeNull()
+    expect(
+      getWinner(makePlayers(['mafia', 'civilian', 'civilian', 'doctor'], [])),
+    ).toBeNull()
   })
 })
 
@@ -216,7 +232,10 @@ describe('day cycle', () => {
 
   it('goes to the final screen from the morning when the night decided the game', () => {
     let session = makeSession(['mafia', 'civilian', 'civilian', 'doctor'])
-    session = { ...session, players: makePlayers(['mafia', 'civilian', 'civilian', 'doctor'], [1]) }
+    session = {
+      ...session,
+      players: makePlayers(['mafia', 'civilian', 'civilian', 'doctor'], [1]),
+    }
     session = setNightTarget(session, 'mafia', 'p2')
 
     const morning = completeNight(session)

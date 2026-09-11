@@ -37,7 +37,9 @@ export function PlayerGrid({ players, showRoles }: PlayerGridProps) {
               {player.name}
             </span>
           </span>
-          {showRoles && <RoleBadge role={player.role} className="self-start text-[11px]" />}
+          {showRoles && (
+            <RoleBadge role={player.role} className="self-start text-[11px]" />
+          )}
         </li>
       ))}
     </ul>

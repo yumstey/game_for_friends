@@ -2,12 +2,7 @@ import { shuffle } from '@/shared/lib'
 import { buildRoleDeck, validateRoleCounts } from './distribution'
 import { EMPTY_NIGHT_ACTIONS, getNightSteps, resolveNight } from './night'
 import type { NightStepId } from '../config/roles'
-import type {
-  MafiaParticipant,
-  MafiaSession,
-  MafiaSettings,
-  RoleCounts,
-} from './types'
+import type { MafiaParticipant, MafiaSession, MafiaSettings, RoleCounts } from './types'
 import { getWinner } from './winner'
 
 export interface CreateMafiaSessionInput {
@@ -101,7 +96,8 @@ export function completeNight(session: MafiaSession): MafiaSession {
     lastNight: report,
     doctorLastTargetId: actions.doctor,
     doctorSelfHealUsed:
-      session.doctorSelfHealUsed || (actions.doctor !== null && actions.doctor === doctorId),
+      session.doctorSelfHealUsed ||
+      (actions.doctor !== null && actions.doctor === doctorId),
     silencedId: actions.lover && !killed.has(actions.lover) ? actions.lover : null,
     winner: getWinner(players),
     log: [
@@ -127,7 +123,10 @@ export function startVoting(session: MafiaSession): MafiaSession {
 }
 
 /** Ovoz berish natijasi: `null` — hech kim chiqarilmadi. */
-export function eliminateByVote(session: MafiaSession, playerId: string | null): MafiaSession {
+export function eliminateByVote(
+  session: MafiaSession,
+  playerId: string | null,
+): MafiaSession {
   const players = session.players.map((player) =>
     player.id === playerId && player.alive ? { ...player, alive: false } : player,
   )

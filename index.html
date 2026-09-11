@@ -21,7 +21,8 @@
           var mode = raw ? JSON.parse(raw).state.mode : 'system'
           var dark =
             mode === 'dark' ||
-            (mode !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            (mode !== 'light' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches)
           document.documentElement.classList.toggle('dark', dark)
         } catch (_) {}
       })()

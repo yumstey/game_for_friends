@@ -149,7 +149,8 @@ export const mafiaGameMessages = defineMessages<MafiaGameMessages>({
       hideAndPass: 'Hide and pass',
       openFirst: 'Reveal the card first',
       allDone: 'All roles are dealt!',
-      allDoneHint: 'Give the phone to the host. Everyone closes their eyes — the town falls asleep.',
+      allDoneHint:
+        'Give the phone to the host. Everyone closes their eyes — the town falls asleep.',
       startNight: 'Start the first night',
     },
     night: {

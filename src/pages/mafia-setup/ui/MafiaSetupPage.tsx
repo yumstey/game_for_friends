@@ -20,7 +20,9 @@ export function MafiaSetupPage() {
         backTo={ROUTES.home}
         title={t.title}
         subtitle={t.subtitle}
-        actions={<GuideButton label={t.rules} title={t.rulesTitle} sections={t.rulesSections} />}
+        actions={
+          <GuideButton label={t.rules} title={t.rulesTitle} sections={t.rulesSections} />
+        }
       />
 
       <PageContent>

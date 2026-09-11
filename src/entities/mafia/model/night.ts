@@ -29,9 +29,14 @@ export function getNightSteps(players: readonly MafiaPlayer[]): NightStepId[] {
 }
 
 /** Qadamni bajaruvchi tirik oʻyinchilar. */
-export function getStepActors(players: readonly MafiaPlayer[], step: NightStepId): MafiaPlayer[] {
+export function getStepActors(
+  players: readonly MafiaPlayer[],
+  step: NightStepId,
+): MafiaPlayer[] {
   return players.filter(
-    (player) => player.alive && (step === 'mafia' ? isMafiaTeam(player.role) : player.role === step),
+    (player) =>
+      player.alive &&
+      (step === 'mafia' ? isMafiaTeam(player.role) : player.role === step),
   )
 }
 
@@ -62,7 +67,9 @@ export function getTargetRestriction(
       return isMafiaTeam(target.role) ? 'teammate' : null
     case 'doctor':
       if (target.id === session.doctorLastTargetId) return 'repeat-heal'
-      return target.role === 'doctor' && session.doctorSelfHealUsed ? 'self-heal-used' : null
+      return target.role === 'doctor' && session.doctorSelfHealUsed
+        ? 'self-heal-used'
+        : null
     case 'detective':
     case 'maniac':
     case 'lover':
@@ -87,18 +94,23 @@ export function getCheckResult(
 }
 
 /** Faqat haqiqatda amalga oshgan harakatlar (oʻlik/bloklangan qadamlar tozalanadi). */
-export function getEffectiveActions(session: Pick<MafiaSession, 'players' | 'night'>): NightActions {
+export function getEffectiveActions(
+  session: Pick<MafiaSession, 'players' | 'night'>,
+): NightActions {
   const effective = { ...EMPTY_NIGHT_ACTIONS }
 
   for (const step of NIGHT_STEP_IDS) {
-    if (getStepAvailability(session, step) === 'active') effective[step] = session.night[step]
+    if (getStepAvailability(session, step) === 'active')
+      effective[step] = session.night[step]
   }
 
   return effective
 }
 
 /** Tun natijasini hisoblaydi: kim oʻldi, kim qutqarildi. Holatni oʻzgartirmaydi. */
-export function resolveNight(session: Pick<MafiaSession, 'players' | 'night' | 'cycle'>): {
+export function resolveNight(
+  session: Pick<MafiaSession, 'players' | 'night' | 'cycle'>,
+): {
   actions: NightActions
   report: NightReport
 } {

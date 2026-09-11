@@ -35,7 +35,9 @@ export function NightWizard({ session }: { session: MafiaSession }) {
   const actors = getStepActors(session.players, step)
   const targetId = session.night[step]
   const isLast = stepIndex === steps.length - 1
-  const blockedName = session.players.find((player) => player.id === session.night.lover)?.name
+  const blockedName = session.players.find(
+    (player) => player.id === session.night.lover,
+  )?.name
   const checkResult =
     isActive && (step === 'detective' || step === 'don')
       ? getCheckResult(session.players, step, targetId)
@@ -140,7 +142,9 @@ export function NightWizard({ session }: { session: MafiaSession }) {
                   >
                     <span className="flex w-full min-w-0 items-center gap-2">
                       <Avatar name={player.name} size="xs" />
-                      <span className="truncate text-sm font-semibold">{player.name}</span>
+                      <span className="truncate text-sm font-semibold">
+                        {player.name}
+                      </span>
                     </span>
                     {restriction ? (
                       <span className="text-xs font-medium text-muted-foreground">
@@ -160,11 +164,15 @@ export function NightWizard({ session }: { session: MafiaSession }) {
         <div
           className={cn(
             'animate-pop-in rounded-3xl p-4 text-center',
-            checkResult ? 'bg-rose-500/12 text-rose-600 dark:text-rose-400' : 'bg-emerald-500/12 text-emerald-700 dark:text-emerald-300',
+            checkResult
+              ? 'bg-rose-500/12 text-rose-600 dark:text-rose-400'
+              : 'bg-emerald-500/12 text-emerald-700 dark:text-emerald-300',
           )}
         >
           <p className="font-display text-lg font-semibold">
-            {step === 'detective' ? t.detectiveResult(checkResult) : t.donResult(checkResult)}
+            {step === 'detective'
+              ? t.detectiveResult(checkResult)
+              : t.donResult(checkResult)}
           </p>
           <p className="mt-1 text-sm opacity-80">{t.showGesture}</p>
         </div>

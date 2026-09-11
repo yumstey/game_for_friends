@@ -33,7 +33,9 @@ export function DiscussionStage({ session }: { session: ImposterSession }) {
         {starter && (
           <>
             <Avatar name={starter.name} size="lg" className="animate-pop-in" />
-            <p className="font-display text-2xl font-semibold tracking-tight">{starter.name}</p>
+            <p className="font-display text-2xl font-semibold tracking-tight">
+              {starter.name}
+            </p>
           </>
         )}
         <Badge tone="primary" className="px-3 py-1 text-sm">
@@ -68,7 +70,10 @@ export function DiscussionStage({ session }: { session: ImposterSession }) {
         </p>
         <ol className="flex flex-col gap-2">
           {t.tips.map((tip, index) => (
-            <li key={tip} className="flex gap-3 text-sm leading-snug text-muted-foreground">
+            <li
+              key={tip}
+              className="flex gap-3 text-sm leading-snug text-muted-foreground"
+            >
               <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-muted font-display text-xs font-semibold text-foreground">
                 {index + 1}
               </span>

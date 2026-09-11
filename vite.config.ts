@@ -6,11 +6,7 @@ import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] }),
-    tailwindcss(),
-  ],
+  plugins: [react(), babel({ presets: [reactCompilerPreset()] }), tailwindcss()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -22,7 +18,10 @@ export default defineConfig({
         // Kutubxonalar alohida chunk'da — ilova kodi oʻzgarganda brauzer keshidan qayta foydalaniladi.
         codeSplitting: {
           groups: [
-            { name: 'react', test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/ },
+            {
+              name: 'react',
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+            },
             { name: 'router', test: /[\\/]node_modules[\\/]react-router[\\/]/ },
           ],
         },

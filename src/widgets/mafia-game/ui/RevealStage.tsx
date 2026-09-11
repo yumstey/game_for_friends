@@ -33,13 +33,21 @@ export function RevealStage({ session }: { session: MafiaSession }) {
       <>
         <Card className="flex animate-pop-in flex-col items-center gap-3 py-10 text-center">
           <CheckCircle2 className="size-14 text-emerald-500" />
-          <h1 className="font-display text-2xl font-semibold tracking-tight">{t.allDone}</h1>
+          <h1 className="font-display text-2xl font-semibold tracking-tight">
+            {t.allDone}
+          </h1>
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
             {t.allDoneHint}
           </p>
         </Card>
         <BottomBar>
-          <Button size="lg" variant="mafia" fullWidth icon={<Moon />} onClick={startNight}>
+          <Button
+            size="lg"
+            variant="mafia"
+            fullWidth
+            icon={<Moon />}
+            onClick={startNight}
+          >
             {t.startNight}
           </Button>
         </BottomBar>

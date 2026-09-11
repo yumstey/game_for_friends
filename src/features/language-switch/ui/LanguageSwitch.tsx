@@ -1,4 +1,9 @@
-import { LANGUAGES, commonMessages, useLanguageStore, useTranslation } from '@/shared/i18n'
+import {
+  LANGUAGES,
+  commonMessages,
+  useLanguageStore,
+  useTranslation,
+} from '@/shared/i18n'
 import { cn } from '@/shared/lib'
 
 const labels = { uz: 'UZ', en: 'EN' } as const
@@ -13,7 +18,10 @@ export function LanguageSwitch({ className }: { className?: string }) {
     <div
       role="radiogroup"
       aria-label={t.language}
-      className={cn('flex h-11 items-center rounded-2xl border border-border bg-card p-1', className)}
+      className={cn(
+        'flex h-11 items-center rounded-2xl border border-border bg-card p-1',
+        className,
+      )}
     >
       {LANGUAGES.map((code) => (
         <button

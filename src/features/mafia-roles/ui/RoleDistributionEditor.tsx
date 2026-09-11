@@ -48,7 +48,9 @@ function RoleRow({ role, description, children }: RoleRowProps) {
       </span>
       <div className="min-w-0 flex-1">
         <p className="text-[15px] font-semibold">{t.roles[role].name}</p>
-        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">{description}</p>
+        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+          {description}
+        </p>
       </div>
       {children}
     </li>
@@ -68,7 +70,9 @@ export function RoleDistributionEditor() {
   const toggleAuto = (autoRoles: boolean) =>
     updateSettings(
       // Qoʻlda rejimga oʻtganda hozirgi tavsiyadan boshlaymiz.
-      autoRoles ? { autoRoles } : { autoRoles, roleCounts: recommendRoleCounts(playerCount) },
+      autoRoles
+        ? { autoRoles }
+        : { autoRoles, roleCounts: recommendRoleCounts(playerCount) },
     )
 
   return (

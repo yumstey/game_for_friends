@@ -76,7 +76,8 @@ export const mafiaMessages = defineMessages<MafiaEntityMessages>({
     roles: {
       civilian: {
         name: 'Civilian',
-        description: 'You have no special ability. Use logic and intuition to expose the mafia.',
+        description:
+          'You have no special ability. Use logic and intuition to expose the mafia.',
         goal: 'Eliminate every mafia member and the maniac.',
       },
       mafia: {

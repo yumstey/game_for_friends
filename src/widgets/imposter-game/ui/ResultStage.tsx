@@ -15,7 +15,9 @@ export function ResultStage({ session }: { session: ImposterSession }) {
   const { start, canStart } = useStartImposterRound()
 
   const { round } = session
-  const imposters = round.players.filter((player) => round.imposterIds.includes(player.id))
+  const imposters = round.players.filter((player) =>
+    round.imposterIds.includes(player.id),
+  )
 
   return (
     <>

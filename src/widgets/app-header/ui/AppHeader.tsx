@@ -17,7 +17,13 @@ interface AppHeaderProps {
   compact?: boolean
 }
 
-export function AppHeader({ title, subtitle, backTo, actions, compact = false }: AppHeaderProps) {
+export function AppHeader({
+  title,
+  subtitle,
+  backTo,
+  actions,
+  compact = false,
+}: AppHeaderProps) {
   const t = useTranslation(commonMessages)
 
   return (
@@ -42,10 +48,17 @@ export function AppHeader({ title, subtitle, backTo, actions, compact = false }:
         )}
 
         <div className="min-w-0 flex-1 px-1">
-          <p className={cn('truncate font-display font-semibold tracking-tight', subtitle ? 'text-base' : 'text-lg')}>
+          <p
+            className={cn(
+              'truncate font-display font-semibold tracking-tight',
+              subtitle ? 'text-base' : 'text-lg',
+            )}
+          >
             {title ?? t.appName}
           </p>
-          {subtitle && <p className="truncate text-xs text-muted-foreground">{subtitle}</p>}
+          {subtitle && (
+            <p className="truncate text-xs text-muted-foreground">{subtitle}</p>
+          )}
         </div>
 
         {actions}

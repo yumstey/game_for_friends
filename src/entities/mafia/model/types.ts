@@ -41,7 +41,8 @@ export interface NightReport {
  * verdict — ovoz natijasi
  * over    — oʻyin tugadi
  */
-export type MafiaPhase = 'reveal' | 'night' | 'morning' | 'day' | 'voting' | 'verdict' | 'over'
+export type MafiaPhase =
+  'reveal' | 'night' | 'morning' | 'day' | 'voting' | 'verdict' | 'over'
 
 export type MafiaWinner = 'town' | 'mafia' | 'maniac' | 'draw'
 

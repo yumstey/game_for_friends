@@ -43,7 +43,14 @@ export const SPECIAL_ROLE_IDS: readonly SpecialRoleId[] = [
 ]
 
 /** Tungi qadamlar: kim qaysi tartibda uygʻonadi. `mafia` — butun mafiya jamoasi. */
-export const NIGHT_STEP_IDS = ['lover', 'mafia', 'don', 'detective', 'doctor', 'maniac'] as const
+export const NIGHT_STEP_IDS = [
+  'lover',
+  'mafia',
+  'don',
+  'detective',
+  'doctor',
+  'maniac',
+] as const
 
 export type NightStepId = (typeof NIGHT_STEP_IDS)[number]
 

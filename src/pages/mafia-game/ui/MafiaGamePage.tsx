@@ -5,7 +5,12 @@ import { ROUTES } from '@/shared/config'
 import { useScrollToTop, useWakeLock } from '@/shared/lib'
 import { PageContent } from '@/shared/ui'
 import { AppHeader } from '@/widgets/app-header'
-import { JournalButton, MafiaGame, MafiaPhaseLabel, UndoButton } from '@/widgets/mafia-game'
+import {
+  JournalButton,
+  MafiaGame,
+  MafiaPhaseLabel,
+  UndoButton,
+} from '@/widgets/mafia-game'
 
 export function MafiaGamePage() {
   const navigate = useNavigate()

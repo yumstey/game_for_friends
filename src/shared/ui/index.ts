@@ -5,7 +5,12 @@ export { Callout, type CalloutProps } from './Callout'
 export { Card, Section } from './Card'
 export { ChoiceCard, type ChoiceCardProps } from './ChoiceCard'
 export { CountdownTimer, type CountdownTimerProps } from './CountdownTimer'
-export { ConfirmDialog, Dialog, type ConfirmDialogProps, type DialogProps } from './Dialog'
+export {
+  ConfirmDialog,
+  Dialog,
+  type ConfirmDialogProps,
+  type DialogProps,
+} from './Dialog'
 export { GuideButton, type GuideButtonProps, type GuideSection } from './GuideButton'
 export { IconButton, type IconButtonProps } from './IconButton'
 export { BottomBar, Container, PageContent } from './Layout'

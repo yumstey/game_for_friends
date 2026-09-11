@@ -52,9 +52,10 @@ export const useImposterStore = create<ImposterState>()(
         startRound: (round, { resetWordHistory = false } = {}) =>
           set(({ usedWordKeys }) => ({
             session: createSession(round),
-            usedWordKeys: [...(resetWordHistory ? [] : usedWordKeys), round.wordKey].slice(
-              -MAX_USED_WORDS,
-            ),
+            usedWordKeys: [
+              ...(resetWordHistory ? [] : usedWordKeys),
+              round.wordKey,
+            ].slice(-MAX_USED_WORDS),
           })),
 
         revealNext: () => updateSession(advanceReveal),

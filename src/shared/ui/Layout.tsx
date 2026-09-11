@@ -25,7 +25,13 @@ export function PageContent({
 }
 
 /** Ekran pastiga yopishgan harakat paneli (safe-area hisobga olingan). */
-export function BottomBar({ children, className }: { children: ReactNode; className?: string }) {
+export function BottomBar({
+  children,
+  className,
+}: {
+  children: ReactNode
+  className?: string
+}) {
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 bg-linear-to-t from-background from-60% to-transparent pt-8">
       <div

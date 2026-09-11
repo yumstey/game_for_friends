@@ -59,7 +59,10 @@ export function getRoleLimit(role: SpecialRoleId, playerCount: number): number {
   return Math.max(1, Math.floor((playerCount - 1) / 2))
 }
 
-export function validateRoleCounts(counts: RoleCounts, playerCount: number): RoleSetupIssue[] {
+export function validateRoleCounts(
+  counts: RoleCounts,
+  playerCount: number,
+): RoleSetupIssue[] {
   const issues: RoleSetupIssue[] = []
   const mafiaTeam = countMafiaTeam(counts)
 

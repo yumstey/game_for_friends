@@ -8,7 +8,13 @@ import {
   sportsTopic,
 } from './culture'
 import { clothesTopic, foodTopic, fruitsTopic, homeTopic, techTopic } from './everyday'
-import { animalsTopic, countriesTopic, natureTopic, placesTopic, transportTopic } from './world'
+import {
+  animalsTopic,
+  countriesTopic,
+  natureTopic,
+  placesTopic,
+  transportTopic,
+} from './world'
 
 /** Barcha mavzular — sozlamalar sahifasida shu tartibda koʻrinadi. */
 export const TOPICS: readonly Topic[] = [

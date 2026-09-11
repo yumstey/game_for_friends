@@ -3,13 +3,15 @@ import { defineMessages } from '@/shared/i18n'
 export const mafiaRolesMessages = defineMessages({
   uz: {
     rolesTitle: 'Rollar',
-    rolesSummary: (mafia: number, town: number) => `Mafiya: ${mafia} · Qolganlar: ${town}`,
+    rolesSummary: (mafia: number, town: number) =>
+      `Mafiya: ${mafia} · Qolganlar: ${town}`,
     auto: 'Avtomatik taqsimlash',
     autoHint: 'Oʻyinchilar soniga qarab eng muvozanatli variant',
     civiliansHint: 'Qolgan oʻrinlar avtomatik toʻldiriladi',
     optionsTitle: 'Qoidalar',
     revealRole: 'Oʻlganning roli ochilsin',
-    revealRoleHint: 'Oʻldirilgan yoki chiqarilgan oʻyinchining roli hammaga eʼlon qilinadi',
+    revealRoleHint:
+      'Oʻldirilgan yoki chiqarilgan oʻyinchining roli hammaga eʼlon qilinadi',
     timer: 'Kunduzgi muhokama taymeri',
   },
   en: {

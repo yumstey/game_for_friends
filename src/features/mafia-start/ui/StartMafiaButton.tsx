@@ -4,7 +4,10 @@ import { defineMessages, useTranslation } from '@/shared/i18n'
 import { Button } from '@/shared/ui'
 import { useStartMafiaGame, type MafiaStartIssue } from '../model/use-start-mafia-game'
 
-const messages = defineMessages<{ start: string; issues: Record<MafiaStartIssue, string> }>({
+const messages = defineMessages<{
+  start: string
+  issues: Record<MafiaStartIssue, string>
+}>({
   uz: {
     start: 'Rollarni tarqatish',
     issues: {

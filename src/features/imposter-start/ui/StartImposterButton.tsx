@@ -2,9 +2,15 @@ import { Play } from 'lucide-react'
 import { IMPOSTER_MIN_PLAYERS } from '@/entities/imposter'
 import { defineMessages, useTranslation } from '@/shared/i18n'
 import { Button } from '@/shared/ui'
-import { useStartImposterRound, type ImposterStartIssue } from '../model/use-start-imposter-round'
+import {
+  useStartImposterRound,
+  type ImposterStartIssue,
+} from '../model/use-start-imposter-round'
 
-const messages = defineMessages<{ start: string; issues: Record<ImposterStartIssue, string> }>({
+const messages = defineMessages<{
+  start: string
+  issues: Record<ImposterStartIssue, string>
+}>({
   uz: {
     start: 'Oʻyinni boshlash',
     issues: {

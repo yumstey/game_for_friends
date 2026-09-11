@@ -73,8 +73,10 @@ export const imposterGameMessages = defineMessages<ImposterGameMessages>({
         'Juda aniq aytmang — imposter soʻzni topib olishi mumkin.',
         'Muhokamadan soʻng imposterni ogʻzaki tanlang va pastdagi tugmani bosing.',
       ],
-      revealImposter: (count) => (count === 1 ? 'Imposterni koʻrsatish' : 'Imposterlarni koʻrsatish'),
-      confirmTitle: (count) => (count === 1 ? 'Imposterni ochamizmi?' : 'Imposterlarni ochamizmi?'),
+      revealImposter: (count) =>
+        count === 1 ? 'Imposterni koʻrsatish' : 'Imposterlarni koʻrsatish',
+      confirmTitle: (count) =>
+        count === 1 ? 'Imposterni ochamizmi?' : 'Imposterlarni ochamizmi?',
       confirmDescription: 'Hamma oʻz tanlovini aytib boʻlganiga ishonch hosil qiling.',
       confirm: 'Ha, koʻrsatish',
     },
@@ -120,8 +122,10 @@ export const imposterGameMessages = defineMessages<ImposterGameMessages>({
         'Do not be too obvious — the imposter might guess the word.',
         'After the discussion, pick the imposter out loud and press the button below.',
       ],
-      revealImposter: (count) => (count === 1 ? 'Show the imposter' : 'Show the imposters'),
-      confirmTitle: (count) => (count === 1 ? 'Reveal the imposter?' : 'Reveal the imposters?'),
+      revealImposter: (count) =>
+        count === 1 ? 'Show the imposter' : 'Show the imposters',
+      confirmTitle: (count) =>
+        count === 1 ? 'Reveal the imposter?' : 'Reveal the imposters?',
       confirmDescription: 'Make sure everyone has named their suspect.',
       confirm: 'Yes, show',
     },

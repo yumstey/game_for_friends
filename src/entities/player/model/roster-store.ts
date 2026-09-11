@@ -2,7 +2,11 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { STORAGE_KEYS } from '@/shared/config'
 import { clamp, createId } from '@/shared/lib'
-import { DEFAULT_PLAYER_NAMES, PLAYER_NAME_MAX_LENGTH, ROSTER_LIMITS } from '../config/defaults'
+import {
+  DEFAULT_PLAYER_NAMES,
+  PLAYER_NAME_MAX_LENGTH,
+  ROSTER_LIMITS,
+} from '../config/defaults'
 import type { Player } from './types'
 
 type NameFactory = (existingNames: readonly string[]) => string
